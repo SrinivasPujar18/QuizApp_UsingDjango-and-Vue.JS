@@ -97,6 +97,12 @@ Contributions are welcome!
 5. Open a Pull Request
 ---
 
+-> Run with the help of 'url' in local server by:
+http://127.0.0.1:8000/ ---> for "home.html" frontend file
+http://127.0.0.1:8000/admin/ ---> for admin file
+http://127.0.0.1:8000/api/get-quiz/ ---> for QuizCategory Questions and Answers
+http://127.0.0.1:8000/quiz/?Category=Fullstack ---> for "Fullstack" category questions
+
 👨‍💻 Author
 
 Srinivasa G Pujar
