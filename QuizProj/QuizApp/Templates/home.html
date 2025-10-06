@@ -1,0 +1,32 @@
+<!-- (1) Copied boiler code from Bottstrap --> 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django QuizApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="col-md-2 mx-auto mt-3 pt-3">   <!-- position of div-->
+      <h1>Quiz App</h1>
+    </div>
+    <div class = "container mt-4 pt-4">
+        <div class="col-md-6 mx-auto">
+          <form>
+            <div class="form-group">
+              <label>Select Category</label>
+              <select name = "Category" class="form-control">
+                <option value="Choose">Choose Your Category Of Questions</option> <!-- Selection box-->
+                {% for category in categories %}  <!-- For loop of Class Category-->
+                <option vlaue="{{category.category_name}}">{{category.category_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <button class="btn btn-danger mt-2">Submit</button> <!-- Submit button-->
+          </form>
+        </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+  </body>
+</html>

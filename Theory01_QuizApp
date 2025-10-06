@@ -1,0 +1,88 @@
+Quiz App:
+Create a new folder in file manager and open that folder in VSCode.
+Firstly, in terminal create an virtual environment (env)
+1) -> pip install virtualenv
+2) -> python -m venv envQuiz
+3) -> .\envQuiz\Scripts\Activate
+------Activates the env
+
+To check the downloaded packages in env,
+-> pip freeze
+
+Now, download the Django in current env by,
+4) -> pip install django
+-------django installed Successfully
+
+Now, create the Django project by,
+5) -> django-admin startproject QuizProj
+
+Now, create App by,
+6) -> cd QuizProj (root directory)
+7) -> python manage.py startapp QuizApp
+
+Now, we have to link both Project and App by,
+8) QuizProj -> settings.py -> line:40---CODE---(1)
+---------we have linked both project and App.
+
+Now, we have to create web page in server by,
+9) QuizAPP -> views.py -> line:1,4&5---CODE---(1)
+And, we have to create a new file "urls.py" in "QuizApp" folder 
+10) QuizApp -> urls.py -> line:1---CODE---(1)
+11) QuizProj -> urls.py -> line:18&22---CODE---(1)
+In terminal, -> python manage.py runserver, copy the LINK and paste in web server for output
+--------------Output in server.
+
+Now, we creating a models by,
+12) QuizApp -> models.py -> line:4---CODE---(1)
+After creating models, we have to migrate the models to create database by,
+13) -> python manage.py makemigrations
+    -> python manage.py migrate
+----------migration Successfully completed.
+
+Now, we have to create SuperUser by,
+14) -> python manage.py createsuperuser
+Then, it asks for username, email and password.
+    -> username: SriPujar
+    -> Email: srinivaspujar2001@gmail.com
+    -> Password: Pujar@2818
+--------------SuperUser created successfully
+
+AND, we have to register the classes of models in "QuizApp" 'admin.py' by,
+15) QuizApp -> admin.py -> line:2&4---CODE---(1)
+
+By logging in server we can open it like,
+16) open through -> LINK + /admin/              ---> http://127.0.0.1:8000/admin/
+And fill the Credentials and LOGIN.
+---------------And you will see the Table of all CLASSES in database.
+
+Then, you have to fill the admin's CLASSES in server by,
+17) you will find 3 database Models like -> Category, Question, Answer.
+--Category -> +Add -> enter category name -> save
+--Question -> +Add -> enter Question name -> save
+--Answer -> +Add -> enter Answer name -> save
+---------------------It stores in Database of admin panel.
+
+Now, we will make this job easy by,
+18) QuizApp -> admin.py -> ---CODE---(2)      (it helps to show the data(question and answer) in inline)
+    QuizApp -> models.py -> ---CODE---(2)    (it helps to show the data(question and answer) NAME)
+
+Now, we are creating an API by,
+19) QuizApp -> views.py -> ---CODE---(2)
+20) QuizApp -> models.py -> ---CODE---(3)
+
+Now, we are creating the front end of the project by,
+In QuizApp create a new folder "Templates", and create a new file "home.html" in that Templates.
+21) QuizApp -> views.py -> ---CODE---(4) then,
+QuizApp -> Templates -> home.html -> ---CODE---(1)
+22) AND, QuizApp -> views.py -> ---CODE---(5)
+23) AND, QuizApp -> views.py -> ---CODE---(6)
+Then, we to register that in 
+24) QuizApp -> urls.py -> ---CODE---(2)
+
+Then, Create a new file "quiz.html" in "Templates" 
+25) "Templates" -> quiz.html -> ---CODE---(1)(2)
+26) AND, QuizApp -> views.py -> ---CODE---(7)
+27) "Templates" -> quiz.html -> ---CODE---(3)
+
+28) In QuizApp -> views.py -> ---CODE---(8)
+29) "Templates" -> quiz.html -> ---CODE---(4)
